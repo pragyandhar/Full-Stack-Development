@@ -1,0 +1,21 @@
+*{
+    background-color: black;
+}
+div{
+    padding: 50px;
+    /* width: 50%;
+    margin-left: 25%; */
+}
+.imgs{
+    border: 5px solid rgb(248, 248, 248);
+    height: 250px;
+    width: 250px;
+}
+h1{
+    color: #FDA4AF;
+    font-family: 'Salsa', cursive;
+}
+p{
+    color: #F5CD1D;
+    font-family: 'Salsa', cursive;
+}
