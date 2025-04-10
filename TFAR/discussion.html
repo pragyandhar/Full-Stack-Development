@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TFAR Community Forum</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: radial-gradient(circle at top left, #000, #111);
+        color: #fff;
+        overflow-x: hidden;
+      }
+
+      .forum-container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(0, 0, 0, 0.7);
+        border-radius: 20px;
+        box-shadow: 0 0 30px #0ff;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #00faff;
+        margin-bottom: 1.5rem;
+      }
+
+      .discussion {
+        margin-bottom: 2rem;
+        padding: 1rem;
+        border-left: 4px solid #00faff;
+        background: #111;
+        border-radius: 10px;
+        animation: bounceIn 0.6s ease;
+      }
+
+      .discussion p {
+        margin: 0.5rem 0;
+      }
+
+      .form-container {
+        margin-top: 2rem;
+      }
+
+      .form-container input,
+      .form-container textarea {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0.5rem 0;
+        border-radius: 10px;
+        border: none;
+        background: #222;
+        color: #fff;
+      }
+
+      .form-container button {
+        background-color: #00faff;
+        color: #000;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 10px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .form-container button:hover {
+        transform: scale(1.1);
+      }
+
+      .back-home {
+        display: block;
+        width: fit-content;
+        margin: 2rem auto 0;
+        padding: 0.8rem 1.5rem;
+        background-color: #00faff;
+        color: #000;
+        text-align: center;
+        border-radius: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 0 10px #0ff;
+        transition: background 0.3s;
+      }
+
+      .back-home:hover {
+        background-color: #00cce6;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.95);
+          opacity: 0;
+        }
+        60% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="forum-container">
+      <h1>💬 TFAR Community Forum</h1>
+
+      <div class="discussion" id="discussion-list">
+        <p>
+          <strong>Priya:</strong> How do you scale tech in rural areas without
+          reliable internet?
+        </p>
+        <p>
+          <strong>Arjun:</strong> We're piloting mesh networks with local hubs.
+          It’s working so far!
+        </p>
+        <p>
+          <strong>Meera:</strong> Has anyone tried WhatsApp-based education for
+          offline communities?
+        </p>
+        <p>
+          <strong>Karan:</strong> Yes, it helps reach folks with minimal digital
+          literacy. We’ve had great feedback.
+        </p>
+        <p>
+          <strong>Sneha:</strong> What platforms are best for tracking community
+          participation digitally?
+        </p>
+        <p>
+          <strong>Ravi:</strong> We're experimenting with Airtable + Twilio
+          integrations. Lightweight and cost-effective!
+        </p>
+      </div>
+
+      <div class="form-container">
+        <h2>Add to the Discussion 🚀</h2>
+        <input type="text" id="username" placeholder="Your Name" />
+        <textarea id="comment" rows="4" placeholder="Your Comment"></textarea>
+        <button onclick="addComment()">Submit</button>
+      </div>
+
+      <a href="index.html" class="back-home">← Back to Home</a>
+    </div>
+
+    <script>
+      const replies = [
+        "Great point! How do you suggest implementing that in small villages?",
+        "Interesting! Have you seen any success stories around this?",
+        "Love this input. Do you have any resources to share?",
+        "That’s something we’ve discussed too. Let's collaborate on it!",
+      ];
+
+      function addComment() {
+        const name = document.getElementById("username").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+        if (!name || !comment) return alert("Please fill in both fields!");
+
+        const discussionList = document.getElementById("discussion-list");
+        const userPost = document.createElement("div");
+        userPost.className = "discussion";
+        userPost.innerHTML = `<p><strong>${name}:</strong> ${comment}</p>`;
+        discussionList.appendChild(userPost);
+
+        const autoReply = document.createElement("div");
+        autoReply.className = "discussion";
+        const randomReply = replies[Math.floor(Math.random() * replies.length)];
+        autoReply.innerHTML = `<p><strong>Community Bot:</strong> ${randomReply}</p>`;
+        discussionList.appendChild(autoReply);
+
+        document.getElementById("username").value = "";
+        document.getElementById("comment").value = "";
+      }
+    </script>
+  </body>
+</html>

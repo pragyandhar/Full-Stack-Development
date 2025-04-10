@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Workshops & Training | TFAR</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <style>
+      .popup-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .popup-box {
+        background: #111;
+        border: 2px solid #00f0ff;
+        border-radius: 12px;
+        padding: 20px 30px;
+        color: white;
+        font-size: 1.2rem;
+        text-align: center;
+        box-shadow: 0 0 20px #00f0ff;
+        animation: bounce 0.4s ease-in-out;
+      }
+
+      @keyframes bounce {
+        0% {
+          transform: scale(0.9);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".card .cta-button").forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault();
+            const message =
+              button.textContent.trim() === "Register"
+                ? "✅ You're successfully registered! Check your email for details."
+                : "📬 Thanks for your inquiry! We'll respond shortly with more info.";
+
+            const popup = document.createElement("div");
+            popup.classList.add("popup-overlay");
+            popup.innerHTML = `<div class="popup-box">${message}</div>`;
+            document.body.appendChild(popup);
+
+            popup.addEventListener("click", () => popup.remove());
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">TFAR-TechiesForAReason</div>
+        <ul class="nav-links">
+          <li><a href="index.html#mission">Mission</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#content">Content</a></li>
+          <li><a href="index.html#resources">Resources</a></li>
+          <li><a href="index.html#community">Community</a></li>
+          <li><a href="index.html#stories">Success Stories</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-title">
+        <h1>🎓 Workshops & Training</h1>
+        <p>Empowering through skill-building. Learn. Grow. Impact.</p>
+      </section>
+
+      <section class="featured-workshops">
+        <h2>🔥 Featured Workshops</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Digital Literacy for All</h3>
+            <p>Equip underserved communities with essential digital skills.</p>
+            <ul>
+              <li>👥 Audience: Women & Youth</li>
+              <li>⏳ Duration: 2 hours</li>
+              <li>📅 Dates: Ongoing</li>
+            </ul>
+            <a href="#" class="cta-button">Register</a>
+          </div>
+          <div class="card">
+            <h3>Tech for Nonprofits Bootcamp</h3>
+            <p>From CRMs to cloud, level up your org's tech game.</p>
+            <ul>
+              <li>👥 Audience: NGO Staff</li>
+              <li>⏳ Duration: 4 hours</li>
+              <li>📅 Dates: 21st April</li>
+            </ul>
+            <a href="#" class="cta-button">Register</a>
+          </div>
+          <div class="card">
+            <h3>AI for Social Good</h3>
+            <p>Understand AI & build ethical, impact-driven use cases.</p>
+            <ul>
+              <li>👥 Audience: Students, Devs</li>
+              <li>⏳ Duration: 3 hours</li>
+              <li>📅 Dates: May 5th</li>
+            </ul>
+            <a href="#" class="cta-button">Register</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="training-programs">
+        <h2>📘 Training Programs</h2>
+        <div class="card-grid">
+          <div class="card">
+            <h3>Strategic Tech Planning</h3>
+            <p>Align your tech stack with mission outcomes.</p>
+            <ul>
+              <li>🎯 Objectives: Tech audit, gap analysis, planning</li>
+              <li>📦 Format: Virtual + offline</li>
+              <li>💸 Cost: ₹12,000</li>
+            </ul>
+            <a href="#" class="cta-button">Inquire</a>
+          </div>
+          <div class="card">
+            <h3>Data Storytelling</h3>
+            <p>Turn raw data into powerful narratives for impact.</p>
+            <ul>
+              <li>🎯 Objectives: Data viz, reporting, dashboards</li>
+              <li>📦 Format: Online self-paced</li>
+              <li>💸 Cost: ₹8,000</li>
+            </ul>
+            <a href="#" class="cta-button">Inquire</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq">
+        <h2>❓ Frequently Asked Questions</h2>
+        <details>
+          <summary>Do I need prior tech experience?</summary>
+          <p>
+            Nope! Our sessions are beginner-friendly and designed for all skill
+            levels.
+          </p>
+        </details>
+        <details>
+          <summary>Are these workshops free?</summary>
+          <p>
+            Some are free, others are low-cost. Details are provided for each
+            one.
+          </p>
+        </details>
+        <details>
+          <summary>Can you deliver a custom training for my org?</summary>
+          <p>
+            Absolutely! Drop us a message and we’ll design something just for
+            you.
+          </p>
+        </details>
+      </section>
+
+      <section class="testimonials enhanced">
+        <h2>💬 Testimonials</h2>
+        <div class="testimonial">
+          <p>
+            “The workshop gave us the clarity we needed to move forward with
+            confidence.”
+          </p>
+          <span class="cite">– Anjali Mehta, Tech4Change Foundation</span>
+        </div>
+        <div class="testimonial">
+          <p>
+            “Our entire team gained practical skills and a renewed sense of
+            purpose.”
+          </p>
+          <span class="cite">– Ramesh Iyer, Rural Innovation Lab</span>
+        </div>
+      </section>
+
+      <section class="contact-section">
+        <h2>📩 Contact Us</h2>
+        <p>Email: <a href="mailto:trainings@tfar.org">trainings@tfar.org</a></p>
+        <p>Phone: <a href="tel:+919999999999">+91-999-999-9999</a></p>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <textarea placeholder="Your Message"></textarea>
+          <button type="submit">Send Inquiry</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 TFAR - Techies For A Reason. Learning for Impact 🌍</p>
+    </footer>
+  </body>
+</html>

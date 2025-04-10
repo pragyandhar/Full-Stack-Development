@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TFAR Webinars</title>
+    <style>
+      body {
+        background: radial-gradient(circle at top left, #000, #0a0a0a);
+        color: #fff;
+        font-family: "Segoe UI", sans-serif;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      nav {
+        background: #000;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 0 20px #00faff88;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+      .logo span {
+        color: #00faff;
+      }
+
+      .nav-links a {
+        color: white;
+        margin-left: 1.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #00faff;
+        text-shadow: 0 0 5px #0ff;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+        animation: fadeIn 1s ease;
+      }
+
+      h1 {
+        color: #00faff;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .webinar-link {
+        cursor: pointer;
+        color: #0cf;
+        font-size: 1.2rem;
+        margin: 0.7rem 0;
+        display: block;
+        padding: 0.5rem;
+        border-left: 4px solid #00faff88;
+        background: #111;
+        border-radius: 8px;
+        transition: background 0.3s ease, transform 0.2s;
+      }
+
+      .webinar-link:hover {
+        background: #00faff22;
+        transform: translateX(5px);
+      }
+
+      .video-box {
+        display: none;
+        margin-top: 2rem;
+        background: #111;
+        padding: 1rem;
+        border-left: 5px solid #00faff;
+        border-radius: 12px;
+        animation: popIn 0.5s ease;
+      }
+
+      iframe {
+        width: 100%;
+        height: 450px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      .back-home {
+        margin-top: 2.5rem;
+        display: inline-block;
+        padding: 0.7rem 1.5rem;
+        background-color: #00faff;
+        color: #000;
+        border-radius: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      .back-home:hover {
+        background-color: #00d5e0;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo"><span>TFAR</span>-TechiesForAReason</div>
+      <div class="nav-links">
+        <a href="index.html#mission">Mission</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#content">Content</a>
+        <a href="index.html#resources">Resources</a>
+        <a href="index.html#community">Community</a>
+        <a href="index.html#stories">Success</a>
+      </div>
+    </nav>
+
+    <main>
+      <h1>🎤 Webinars</h1>
+      <p>
+        Join expert-led sessions decoding tech trends and exploring impact in
+        society.
+      </p>
+
+      <div
+        onclick="playVideo('https://www.youtube.com/embed/Ke90Tje7VS0')"
+        class="webinar-link"
+      >
+        📅 Building Tech-Driven Solutions — [Live Demo]
+      </div>
+      <div
+        onclick="playVideo('https://www.youtube.com/embed/kUMe1FH4CHE')"
+        class="webinar-link"
+      >
+        📅 Rapid HTML Deployment — [Instant Bootcamp]
+      </div>
+      <div
+        onclick="playVideo('https://www.youtube.com/embed/qz0aGYrrlhU')"
+        class="webinar-link"
+      >
+        📅 JavaScript for Nonprofits — [Quick Learn]
+      </div>
+
+      <div class="video-box" id="video-box">
+        <iframe id="webinar-player" allowfullscreen></iframe>
+      </div>
+
+      <a href="index.html" class="back-home">← Back to Home</a>
+    </main>
+
+    <script>
+      function playVideo(link) {
+        document.getElementById("webinar-player").src = link;
+        const box = document.getElementById("video-box");
+        box.style.display = "block";
+        box.scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>

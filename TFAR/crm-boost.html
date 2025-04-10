@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nonprofit Efficiency Boost</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #000;
+        color: white;
+        background-image: radial-gradient(circle at top right, #111, #000);
+      }
+
+      .hero {
+        text-align: center;
+        padding: 4rem 1rem 2rem;
+        animation: fadeIn 1.2s ease-in-out;
+      }
+
+      .hero h1 {
+        font-size: 2.8rem;
+        color: #00faff;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: #ccc;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      .details {
+        max-width: 800px;
+        margin: 3rem auto;
+        padding: 2rem;
+        border-radius: 20px;
+        background: #111;
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+        animation: slideIn 1s ease;
+      }
+
+      .detail-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .detail-item span {
+        font-size: 1.6rem;
+        margin-right: 1rem;
+        color: #00faff;
+        animation: floatIcon 3s infinite ease-in-out;
+      }
+
+      .back-btn {
+        display: block;
+        margin: 3rem auto 2rem;
+        background: #00faff;
+        color: #000;
+        font-weight: bold;
+        border: none;
+        border-radius: 12px;
+        padding: 0.9rem 2rem;
+        text-decoration: none;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      .back-btn:hover {
+        background: #00c3e6;
+        transform: scale(1.05);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes floatIcon {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="hero">
+      <h1><span class="emoji">💡</span>📊 Nonprofit Efficiency Boost</h1>
+      <p class="intro">
+        We developed a smart CRM system that empowered a local nonprofit to
+        double their outreach and automate 80% of their manual operations. Let’s
+        dive in.
+      </p>
+    </section>
+
+    <section class="details">
+      <div class="detail-item">
+        <span>📈</span>
+        <div>
+          <strong>Metrics:</strong> 200% outreach growth, 60% surge in volunteer
+          engagement, and better data insights.
+        </div>
+      </div>
+      <div class="detail-item">
+        <span>🛠️</span>
+        <div>
+          <strong>Features:</strong> Email automation, donor tracking, volunteer
+          logs, real-time dashboards.
+        </div>
+      </div>
+      <div class="detail-item">
+        <span>💡</span>
+        <div>
+          <strong>Stack:</strong> Firebase + Node.js + Retool (Rapid prototype
+          with low overhead).
+        </div>
+      </div>
+      <div class="detail-item">
+        <span>🚀</span>
+        <div>
+          <strong>Impact:</strong> Admins save 30+ hours/month. Faster
+          follow-ups, happier stakeholders!
+        </div>
+      </div>
+    </section>
+
+    <a href="index.html" class="back-btn">← Back to Home</a>
+  </body>
+</html>

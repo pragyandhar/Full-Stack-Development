@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TFAR Blog</title>
+  <style>
+    body {
+      background: radial-gradient(circle at top left, #0a0a0a, #000);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    nav {
+      background: #000;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 20px #00faff99;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .logo span {
+      color: #00faff;
+    }
+    .nav-links a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #00faff;
+      text-shadow: 0 0 5px #0ff;
+    }
+    main {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      animation: fadeIn 1s ease;
+    }
+    h1 {
+      color: #00faff;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .blog-link {
+      cursor: pointer;
+      color: #0cf;
+      font-size: 1.2rem;
+      margin: 0.6rem 0;
+      display: block;
+      padding: 0.5rem;
+      border-left: 4px solid #00faff88;
+      background: #111;
+      border-radius: 8px;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+    .blog-link:hover {
+      background: #00faff22;
+      transform: translateX(5px);
+    }
+    .reader {
+      margin-top: 2rem;
+      background: #111;
+      padding: 1.5rem;
+      border-left: 5px solid #00faff;
+      border-radius: 10px;
+      display: none;
+      animation: slideUp 0.5s ease;
+    }
+    .reader h3 {
+      margin-top: 0;
+      color: #0ff;
+    }
+    .reader a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #00faff;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .reader a:hover {
+      background: #00d0e0;
+    }
+    .back-home {
+      margin-top: 2.5rem;
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background-color: #00faff;
+      color: #000;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .back-home:hover {
+      background-color: #00d5e0;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes slideUp {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><span>TFAR</span>-TechiesForAReason</div>
+    <div class="nav-links">
+      <a href="index.html#mission">Mission</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#content">Content</a>
+      <a href="index.html#resources">Resources</a>
+      <a href="index.html#community">Community</a>
+      <a href="index.html#stories">Success</a>
+    </div>
+  </nav>
+
+  <main>
+    <h1>📰 Blog</h1>
+    <p>Explore thought leadership, tech trends & success in digital empowerment.</p>
+
+    <div onclick="openBlog('ai')" class="blog-link">📌 5 Ways AI is Revolutionizing Rural Education</div>
+    <div onclick="openBlog('bootcamp')" class="blog-link">📌 Inside TFAR’s Tech Bootcamp for NGOs</div>
+    <div onclick="openBlog('ethics')" class="blog-link">📌 Designing Ethical Technology for Social Impact</div>
+
+    <div class="reader" id="reader-box">
+      <h3 id="reader-title"></h3>
+      <p id="reader-content"></p>
+      <a id="reader-link" href="#" target="_blank">Read Full Blog ↗</a>
+    </div>
+
+    <a href="index.html" class="back-home">← Back to Home</a>
+  </main>
+
+  <script>
+    const blogs = {
+      ai: {
+        title: "5 Ways AI is Revolutionizing Rural Education",
+        content: "Explore how AI transforms education accessibility in underserved communities through smart content delivery, translation, and automation.",
+        link: "https://pawandongre.medium.com/artificial-intelligence-revolutionizing-rural-development-c79f091d0e94"
+      },
+      bootcamp: {
+        title: "Inside TFAR’s Tech Bootcamp for NGOs",
+        content: "This bootcamp empowered NGOs to use CRM, automation tools, and data dashboards. Dive into how we turned non-tech teams into tech champions.",
+        link: "https://blog.bit.ai/top-technology-blogs/"
+      },
+      ethics: {
+        title: "Designing Ethical Technology for Social Impact",
+        content: "Learn how designing with empathy, inclusion, and cultural context leads to responsible innovation that truly serves the underserved.",
+        link: "https://flynn-product-design.com/post/ethical-design-and-social-impact-innovation-with-a-conscience"
+      }
+    };
+
+    function openBlog(id) {
+      document.getElementById('reader-title').innerText = blogs[id].title;
+      document.getElementById('reader-content').innerText = blogs[id].content;
+      document.getElementById('reader-link').href = blogs[id].link;
+      document.getElementById('reader-box').style.display = 'block';
+      document.getElementById('reader-box').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
